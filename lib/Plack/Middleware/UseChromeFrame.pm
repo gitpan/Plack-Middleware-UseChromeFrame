@@ -1,6 +1,6 @@
 package Plack::Middleware::UseChromeFrame;
 BEGIN {
-  $Plack::Middleware::UseChromeFrame::VERSION = '1.0';
+  $Plack::Middleware::UseChromeFrame::VERSION = '1.001';
 }
 use strict;
 use parent 'Plack::Middleware';
@@ -30,7 +30,7 @@ Plack::Middleware::UseChromeFrame - enable Google Chrome Frame for users who hav
 
 =head1 VERSION
 
-version 1.0
+version 1.001
 
 =head1 SYNOPSIS
 
