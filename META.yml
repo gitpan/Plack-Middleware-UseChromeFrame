@@ -24,4 +24,4 @@ resources:
   bugtracker: http://github.com/ap/Plack-Middleware-UseChromeFrame/issues
   homepage: http://github.com/ap/Plack-Middleware-UseChromeFrame
   repository: git://github.com/ap/Plack-Middleware-UseChromeFrame
-version: 1.001
+version: 1.002

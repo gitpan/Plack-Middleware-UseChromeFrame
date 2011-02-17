@@ -1,6 +1,6 @@
 package Plack::Middleware::UseChromeFrame;
 BEGIN {
-  $Plack::Middleware::UseChromeFrame::VERSION = '1.001';
+  $Plack::Middleware::UseChromeFrame::VERSION = '1.002';
 }
 use strict;
 use parent 'Plack::Middleware';
@@ -12,10 +12,14 @@ sub call {
 	my $self = shift;
 	my ( $env ) = @_;
 	my $res = $self->app->( $env );
+
 	my $ua = $env->{'HTTP_USER_AGENT'};
-	Plack::Util::header_push( $res->[1], 'X-UA-Compatible', 'chrome=1' )
-		if defined $ua and $ua =~ /chromeframe/i;
-	return $res;
+	return $res unless defined $ua and $ua =~ /chromeframe/i;
+
+	Plack::Util::response_cb( $res, sub {
+		Plack::Util::header_push( $_[0][1], 'X-UA-Compatible', 'chrome=1' );
+		return;
+	} );
 }
 
 1;
@@ -30,7 +34,7 @@ Plack::Middleware::UseChromeFrame - enable Google Chrome Frame for users who hav
 
 =head1 VERSION
 
-version 1.001
+version 1.002
 
 =head1 SYNOPSIS
 
