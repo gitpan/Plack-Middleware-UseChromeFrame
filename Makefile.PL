@@ -25,11 +25,12 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Plack::Middleware::UseChromeFrame',
   'PREREQ_PM' => {
+    'Plack' => '0.9942',
     'Plack::Middleware' => '0',
     'Plack::Util' => '0',
     'parent' => '0'
   },
-  'VERSION' => '1.002',
+  'VERSION' => '1.003',
   'test' => {
     'TESTS' => 't/*.t'
   }

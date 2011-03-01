@@ -21,6 +21,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Plack" : "0.9942",
             "Plack::Middleware" : 0,
             "Plack::Util" : 0,
             "parent" : 0
@@ -46,5 +47,5 @@
          "url" : "git://github.com/ap/Plack-Middleware-UseChromeFrame"
       }
    },
-   "version" : "1.002"
+   "version" : "1.003"
 }
